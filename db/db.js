@@ -1,6 +1,8 @@
-// this is going to be the debugger.js 
-//  test ... 
-// I am making a change here 
+const pg = require('pg')
 
-// edit edit edit
+const db = new pg.Pool({
+  database: 'jeopardy_db'
+})
+
+module.exports = db
 
