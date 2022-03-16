@@ -1,17 +1,16 @@
 function renderSignUp() {
   document.querySelector('#page').innerHTML = `
-    <section class="sign-up">
-      <h2>Sign up:</h2>
+    <section class="user sign-up">
+      <h2>Sign up</h2>
+      <div class="error"></div>
       <form action="" onSubmit="signUp(event)">
-        
-        <div class="error"></div>
         <fieldset>
           <label for="">Username: </label><br>
-          <input type="text" name="name">
+          <input type="text" name="name" onClick="clearError('sign-up')">
         </fieldset>
         <fieldset>
           <label for="">Email: </label><br>
-          <input type="email" name="email">
+          <input type="email" name="email" onClick="clearError('sign-up')">
         </fieldset>
         <fieldset>
           <label for="">Password: </label><br>
@@ -19,6 +18,8 @@ function renderSignUp() {
         </fieldset>
         <button>Sign Up</button>
       </form>
+      <div class="user-form-footer">
+      <p>Already have an account? <a href="#" onClick="renderLogin()">Sign in</a></p> 
     </section>
   `
 }
