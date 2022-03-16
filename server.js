@@ -29,3 +29,16 @@ app.use(express.json())
 
 
 // API routes - controller files
+// retrieving random question data from API and assigning the required variables
+
+// const axios = require('axios')
+// axios
+//   .get('https://jservice.io/api/random')
+//   .then(res => {
+//     let apiData = res.data[0]
+//     let questionId = apiData.id 
+//     let question = apiData.question
+//     let answer = apiData.answer
+//     let value = apiData.value
+//     let categoryId = apiData.category
+//   })
