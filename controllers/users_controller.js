@@ -11,8 +11,24 @@ router.post('/', (req, res) => {
   const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
 
   User
-    .create(name, email, passwordDigest)
-    .then(userName => res.json(userName))
+    .findByEmail(email)
+    .then(user => {
+      if(!user){
+        User
+          .create(name, email, passwordDigest)    
+          .then(userName => {
+            return res.json(userName)
+          })
+          
+      } else {
+        return res.status(409).json({message: "This e-mail is taken. Try another."})
+      }
+
+    })
+    
+    
+    
+    
 })
 
 module.exports = router

@@ -12,17 +12,22 @@ app.listen(port,
 
 // middlewares
 const logger = require('./middlewares/logger') 
+const sessions = require('./middlewares/sessions')
 
 // controllers
 const usersController = require('./controllers/users_controller')
-
+const sessionsController = require('./controllers/sessions_controller')
 
 
 // (middleware)  log request 
 app.use(logger)
 
+// enable sessions
+app.use(sessions)
+
 // (middleware) (Single-Page Application)
 app.use(express.static('client'))
+
 
 // parse json body in a POST, PUT or DELETE request, and it assigns the data to req.body
 app.use(express.json())
@@ -30,7 +35,7 @@ app.use(express.json())
 
 // API routes - controller files
 app.use('/api/users', usersController)
-
+app.use('/api/sessions', sessionsController)
 
 
 // retrieving random question data from API and assigning the required variables
