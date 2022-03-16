@@ -1,13 +1,20 @@
+body {
+  background-image: url('https://i.imgur.com/T4V3xu5.jpg');
+}
+
 .page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+h1 {
+  text-decoration: double;
+}
 h1,
 h2 {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Serif', serif;
   font-weight: 700;
+  color: #F5BB00;
 }
 h2 {
   font-size: large;
@@ -33,6 +40,6 @@ h2 {
   align-items: center;
 }
 .create-question p {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Serif', serif;
   font-weight: 400;
 }
