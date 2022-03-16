@@ -14,7 +14,7 @@ app.listen(port,
 const logger = require('./middlewares/logger') 
 
 // controllers
-
+const usersController = require('./controllers/users_controller')
 
 
 
@@ -29,6 +29,10 @@ app.use(express.json())
 
 
 // API routes - controller files
+app.use('/api/users', usersController)
+
+
+
 // retrieving random question data from API and assigning the required variables
 
 // const axios = require('axios')
@@ -42,3 +46,4 @@ app.use(express.json())
 //     let value = apiData.value
 //     let categoryId = apiData.category
 //   })
+
