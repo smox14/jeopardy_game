@@ -20,4 +20,4 @@ function render(component) {
   }
 }
 
-render('quizQuestion')
+// render('quizQuestion')
