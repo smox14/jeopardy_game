@@ -4,9 +4,12 @@ const router = express.Router()
 
 router.post('/', (req, res) => {
   // const
-  const { id, question, userAnswer } = req.body
+  const category = req.body.category.title
+  const {answer, question, user_answer, id, category_id, value, user_id} = req.body
 // upda
-
+  console.log(req.body)
+  createAnswer(answer, question, category, user_answer, id, category_id, value, user_id)
+    .then(res => console.log(res))
 })
 
 
@@ -27,3 +30,5 @@ updated_at: "2015-01-22T02:22:57.187Z"
 userAnswer: false
 value: 1000
 */
+
+module.exports = router

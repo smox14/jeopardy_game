@@ -3,7 +3,7 @@ const express = require('express')
 
 // access app Object
 const app = express()
-const port = 300 
+const port = 3000 
 
 //  start the web server
 app.listen(port, 
@@ -17,6 +17,7 @@ const sessions = require('./middlewares/sessions')
 // controllers
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
+const questionsController = require('./controllers/questions_controller')
 
 
 // (middleware)  log request 
@@ -36,7 +37,7 @@ app.use(express.json())
 // API routes - controller files
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-
+app.use('/api/questions', questionsController)
 
 // retrieving random question data from API and assigning the required variables
 
