@@ -1,11 +1,14 @@
 function renderQuizBoard(){
-  document.querySelector('#page .question-board').innerHTML = 
+  document.querySelector('#page').innerHTML = 
     `
+    <section class="question-board">
     <div onClick=getQuestion(100)>100</div>
     <div onClick=getQuestion(200)>200</div>
     <div onClick=getQuestion(300)>300</div>
     <div onClick=getQuestion(400)>400</div>
     <div onClick=getQuestion(500)>500</div>
+    </section>
+    <section class="create-question"></section>
   `
 }
 renderQuizBoard()

@@ -22,7 +22,7 @@ renderHeaderNav()
 
 function render(component) {
   if (component === 'quizQuestion') {
-    renderQuizQuestion()
+    renderQuizBoard()
   } else if (component === 'signUp') {
     renderSignUp()
   } else if (component === 'login') {
