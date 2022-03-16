@@ -1,32 +1,39 @@
 function renderQuizQuestion() {
-    document.querySelector('#page').innerHTML = `
+  document.querySelector('#page').innerHTML = `
     <section class="create-question">
         <form onSubmit="grabQuestion(event)">
             <h2>Question:</h2>
-            <p>${state.question.value}</p>
+            <p>For: $${state.question.value}</p>
             <input type="hidden" name="value" value="${state.question.value}">
-            <p>ID: ${state.question.id}</p>
+            <p>Category: ${state.question.category.title}</p>
+            <input type="hidden" name="category" value="${state.question.category.title}">
+            <p>Unique ID: ${state.question.id}</p>
             <input type="hidden" name="question_id" value="${state.question.id}">
-            <p name="question">Question: ${state.question.question}</p>
+            <p>Question: ${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
-            <p name="answer">Answer: ${state.question.answer}</p>
-            <input type="hidden" name="question_answer" value="${state.question.answer}">
+            <p>Answer: ${state.question.answer}</p>
+            <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
             <input name="user_input" class="user_input"></input>
-            <button class="answer-btn" >Submit</button>
+            <button class="answer-btn">Submit</button>
+            
+      </form>
+      <form>
+      <button style="visibility:hidden;" class="next-btn" onClick="renderQuizQuestion()">Next</button>
       </form>
     </section>
     `
 }
 
 function grabQuestion(event) {
-    event.preventDefault()
-    const form = event.target
-    const data = Object.fromEntries(new FormData(form))
-    console.log(data)
+  event.preventDefault()
+  const form = event.target
+  const data = Object.fromEntries(new FormData(form))
+  console.log(data)
+  document.querySelector('.user_input').style.visibility = "hidden"
+  document.querySelector('.answer-btn').style.visibility = "hidden"
+  document.querySelector('.next-btn').style.visibility = "visible"
+}
 
-    // axios.post('/api/treasures', data)
-    //     .then(res => {
-    //         console.log(res.data)
-    //         return res.data
-    //     })
+function nextQuestion() {
+
 }
