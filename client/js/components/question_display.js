@@ -1,6 +1,19 @@
+function renderQuizBoard(){
+  document.querySelector('#page .question-board').innerHTML = 
+    `
+    <div onClick=getQuestion(100)>100</div>
+    <div onClick=getQuestion(200)>200</div>
+    <div onClick=getQuestion(300)>300</div>
+    <div onClick=getQuestion(400)>400</div>
+    <div onClick=getQuestion(500)>500</div>
+  `
+}
+renderQuizBoard()
+
+
 function renderQuizQuestion() {
-  document.querySelector('#page').innerHTML = `
-    <section class="create-question">
+  document.querySelector('#page .create-question').innerHTML = `
+    
         <form onSubmit="grabQuestion(event)">
             <h2>Question:</h2>
             <p>For: $${state.question.value}</p>
@@ -14,10 +27,9 @@ function renderQuizQuestion() {
             <button class="answer-btn">Submit</button>
             
       </form>
-      <form onSubmit="getQuestion()">
-      <button style="visibility:hidden;" class="next-btn" >Next</button>
-      </form>
-    </section>
+        <button style="visibility:hidden;" class="next-btn" onClick="getQuestion()">Next</button>
+      
+    
     `
 }
 
@@ -36,10 +48,10 @@ function grabQuestion(event) {
   } else {
     state.question.user_answer = false
   }
-  let obj = state.question
-  obj.user_id = 0
-  axios
-    .post('/api/questions', obj)
-    .then(res => res.data)
+    let obj = state.question 
+    obj.user_id = state.userId
+    axios
+        .post('/api/questions', obj)
+        .then(res => res.data)
 
 }

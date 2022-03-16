@@ -1,12 +1,12 @@
 function renderLogin() {
   document.querySelector('#page').innerHTML = `
-    <section class="log-in">
+    <section class="user log-in">
+      <h2>Login</h2>  
       <div class="error"></div>
-      <form action="" onSubmit="login(event)">
-        <h2>Login:</h2>
+      <form action="" onSubmit="login(event)">  
         <fieldset>
           <label for="">Email: </label><br>
-          <input type="email" name="email">
+          <input type="email" name="email" onClick="clearError('log-in')">
         </fieldset>
         <fieldset>
           <label for="">Password: </label><br>
@@ -14,18 +14,32 @@ function renderLogin() {
         </fieldset>
         <button>Login</button>
       </form>
+      <div class="user-form-footer">
+      <p>Not a member? <a href="#" onClick="renderSignUp()">Create account</a> </p> 
+      </div>
     </section>
   `
+}
+
+function clearError(className){
+  var errorDOM = document.querySelector(`.${className} .error`)
+  errorDOM.textContent = ''
 }
 
 function login(event) {
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
+  var errorDOM = document.querySelector('.log-in .error')
+  errorDOM.textContent = ''
   axios
     .post('/api/sessions', data)
     .then(res => res.data)
-    .then(userName => console.log(userName))
+    .then(userName => {
+      console.log(userName)
+      state.userName = userName
+      renderHeaderNav()
+    })
     .catch(error => {
       let errorDOM = document.querySelector('.log-in .error')
       errorDOM.textContent = error.response.data.message
