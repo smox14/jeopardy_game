@@ -37,10 +37,14 @@ function grabQuestion(event) {
   
   //  check user input
   if( state.question.answer === data.user_input){
-    state.question.userAnswer = true
+    state.question.user_answer = true
   } else {
-    state.question.userAnswer = false
+    state.question.user_answer = false
   }
-  
+    let obj = state.question 
+    obj.user_id = 0
+    axios
+        .post('/api/questions', obj)
+        .then(res => res.data)
 
 }
