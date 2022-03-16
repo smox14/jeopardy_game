@@ -1,3 +1,5 @@
+
+
 function renderQuizQuestion() {
   document.querySelector('#page').innerHTML = `
     <section class="create-question">
@@ -32,4 +34,13 @@ function grabQuestion(event) {
   document.querySelector('.user_input').style.visibility = "hidden"
   document.querySelector('.answer-btn').style.visibility = "hidden"
   document.querySelector('.next-btn').style.visibility = "visible"
+  
+  //  check user input
+  if( state.question.answer === data.user_input){
+    state.question.userAnswer = true
+  } else {
+    state.question.userAnswer = false
+  }
+  
+
 }
