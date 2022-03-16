@@ -1,8 +1,15 @@
-function checkAnswer() {
-  const user_answer = document.querySelector('.user_input').toUpperCase()
-  const question_answer = document.querySelector('.question_answer').toUpperCase()
-  if (user_answer == question_answer) {
-    return console.log('answer was correct')
-  }
-  return console.log('answer was wrong')
+
+// function checkAnswer() {
+//   if document.querySelector
+// }
+const db = require('../db/db')
+  
+function createAnswer(answer, question, question_id, category_id, value, user_id) {
+  const sql = "INSERT INTO user_questions(answer, question, question_id, category_id, value, user_id) VALUES ($1, $2, $3, $4, $5, $6)"
+
+  return db 
+    .query(sql, [answer, question, question_id, category_id, value, user_id])
+    .then(dbRes => dbRes.rows[0])
 }
+
+module.exports = createAnswer
