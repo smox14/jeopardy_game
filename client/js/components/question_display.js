@@ -17,8 +17,8 @@ function renderQuizQuestion() {
             <button class="answer-btn">Submit</button>
             
       </form>
-      <form>
-      <button style="visibility:hidden;" class="next-btn" onClick="renderQuizQuestion()">Next</button>
+      <form onSubmit="getQuestion()">
+      <button style="visibility:hidden;" class="next-btn" >Next</button>
       </form>
     </section>
     `
@@ -32,8 +32,4 @@ function grabQuestion(event) {
   document.querySelector('.user_input').style.visibility = "hidden"
   document.querySelector('.answer-btn').style.visibility = "hidden"
   document.querySelector('.next-btn').style.visibility = "visible"
-}
-
-function nextQuestion() {
-
 }
