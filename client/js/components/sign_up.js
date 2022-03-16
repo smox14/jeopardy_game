@@ -1,15 +1,17 @@
 function renderSignUp() {
   document.querySelector('#page').innerHTML = `
     <section class="sign-up">
+      <h2>Sign up:</h2>
       <form action="" onSubmit="signUp(event)">
-        <h2>Sign up:</h2>
+        
+        <div class="error"></div>
         <fieldset>
           <label for="">Username: </label><br>
           <input type="text" name="name">
         </fieldset>
         <fieldset>
           <label for="">Email: </label><br>
-          <input type="text" name="email">
+          <input type="email" name="email">
         </fieldset>
         <fieldset>
           <label for="">Password: </label><br>
@@ -25,8 +27,13 @@ function signUp(event) {
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
+  var errorDOM = document.querySelector('.sign-up .error')
+  errorDOM.textContent = ''
   axios
     .post('/api/users', data)
     .then(res => res.data)
     .then(userName => console.log(userName))
+    .catch(error => {
+      errorDOM.textContent = error.response.data.message
+    })
 }
