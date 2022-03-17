@@ -60,7 +60,7 @@ label {
 }
 
 .user .error {
-  color: #FF5964;
+  color: #ff5964;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -83,5 +83,39 @@ a:visited {
 }
 
 a:hover {
-  color: #FF5964;
+  color: #ff5964;
+}
+
+.login-success img {
+  width: 100px;
+  margin-top: 10vh;
+}
+
+.success {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+.success span {
+  font-size: 3rem;
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+    /* transform: rotateX(90deg); */
+  }
+  50% {
+    opacity: 0.5;
+    /* transform: rotateX(0deg); */
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    /* transform: rotateX(90deg); */
+  }
+}
+.disappear {
+  animation-name: myAnimation;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
 }

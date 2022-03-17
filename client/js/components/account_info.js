@@ -15,13 +15,15 @@ function renderAccountInfo() {
         `).join('')
       document.querySelector('#page').innerHTML = `
             <section class="account_info">
-              <h2>Welcome back ${state.userName}!</h2>
-                <label>UserID:</label>
-                <span>${state.userId}</span><br/>
+              <h2>Welcome back ${state.userName}!</h2>  
+              <div id="user_details">
                 <label>Username:</label>
-                <span>${state.userName}</span>
-                <h2>Questions you've answered:</h2>
-                ${userResults}
+                <span>${state.userName}</span><br>
+                <label>E-mail:</label>
+                <span>${state.email}</span>
+              </div>
+              <h2>Questions you've answered:</h2>
+              ${userResults}
             </section>
         `
     })
