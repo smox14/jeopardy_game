@@ -1,0 +1,26 @@
+.question-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem 0;
+  width: 70vw;
+}
+
+.question-board div {
+  margin: 0.1rem;
+  padding: 1rem;
+  font-size: 1rem;
+
+  border: black solid;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.user-answer {
+  visibility: visible;
+  position: absolute;
+  border: solid black;
+  padding: 1.5rem;
+  text-align: center;
+  width: 50vw;
+}

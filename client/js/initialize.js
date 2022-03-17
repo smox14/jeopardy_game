@@ -1,12 +1,12 @@
 const state = {
     userId:null,
     userName:null,
-    question: []
+    userScore:0,
+    question: null
 }
 
 function getQuestion(value=null) {
     
-    console.log(value)
     if(value){
         axios.get(`https://jservice.io/api/clues?value=${value}`)
         .then(res => res.data)
@@ -26,4 +26,7 @@ function getQuestion(value=null) {
     }
 }
 
-
+function initialSetting() {
+    state.userScore = 0
+    state.question = null
+}
