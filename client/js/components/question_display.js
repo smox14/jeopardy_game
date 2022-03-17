@@ -1,6 +1,10 @@
 function renderQuizBoard(){
   document.querySelector('#page').innerHTML = 
     `
+    <section class="welcom-user"> 
+        <section class="show user-name"></section>
+        <section class="show user-score"><section>
+    </section>
     <section class="question-board">
     <div onClick=getQuestion(100)>$100</div>
     <div onClick=getQuestion(200)>$200</div>
@@ -40,7 +44,7 @@ function grabQuestion(event) {
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
   document.querySelector('.question-form').style.display = 'none'
-  
+
   // document.querySelector('.answer-btn').style.visibility = "hidden"
   // document.querySelector('#question').style.visibility = "hidden"
   

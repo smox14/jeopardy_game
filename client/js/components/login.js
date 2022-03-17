@@ -39,13 +39,17 @@ function login(event) {
     .then(user => {
       state.userName = user.userName
       state.userId = user.userId
+
+      // document.querySelector('.show.user-name').innerHTML = `Welcome! ${state.userName.toUpperCase()}`
       renderHeaderNav()
       renderAccountInfo()
       
+       
     })
     .catch(error => {
       let errorDOM = document.querySelector('.log-in .error')
-      errorDOM.textContent = error.response.data.message
+      errorDOM.textContent = 'Invalid email or password'
+
     })
 }
 
