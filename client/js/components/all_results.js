@@ -28,6 +28,3 @@ function createAllResultsDOM() {
       </section>
     `).join('')
   }
-
-//   <p>Category ID: ${row.category_id}</p>
-// <p>Unique Question ID: ${row.question_id}</p>
