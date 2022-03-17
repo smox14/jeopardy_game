@@ -13,6 +13,12 @@ const Question = {
     return db
       .query(sql)
       .then(dbRes => dbRes.rows)
+  },
+  selectUserQuestions: (user_id) => {
+    const sql = "SELECT * FROM user_questions WHERE user_id = $1"
+    return db
+      .query(sql, [user_id])
+      .then(dbRes => dbRes.rows)
   }
 }
 

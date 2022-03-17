@@ -20,4 +20,11 @@ router.get('/', (req, res) => {
   .then(data => res.json(data))
 })
 
+router.get('/:user_id', (req, res) => {
+  const user_id = req.params.user_id
+  Question
+  .selectUserQuestions(user_id)
+  .then(data => res.json(data))
+})
+
 module.exports = router
