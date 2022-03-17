@@ -34,6 +34,7 @@ function initialSetting() {
   state.question = null
   state.userId = null
   state.userName = null
+  state.email = null
 }
 
 
