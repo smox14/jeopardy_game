@@ -34,10 +34,28 @@ function signUp(event) {
     .post('/api/users', data)
     .then(res => res.data)
     .then(userName => {
+
       // console.log(userName)
-      renderLogin()
-      document.querySelector('.log-in .error').innerHTML = `You have successfully signed up, please log in below ${userName}`
-      document.querySelector('.log-in .error').style.color = 'yellow'
+      // renderLogin()
+      // document.querySelector('.log-in .error').innerHTML = `You have successfully signed up, please log in below ${userName}`
+      // document.querySelector('.log-in .error').style.color = 'yellow'
+
+      document.querySelector("#header-nav").style.pointerEvents = 'none';
+      document.querySelector('#page').innerHTML = ` 
+        <section class='login-success'>
+          <img src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
+        </section>`
+      
+      sleep(2000).then(() => { 
+        document.querySelector("#header-nav").style.pointerEvents = 'auto';
+        document.querySelector('#page').innerHTML = `
+          <section class="user sign-up success">
+            <span class="material-icons">check_circle</span>
+            <p> Your account has been created successfully!</p>
+            <button onClick="renderLogin()">Ok</button>
+          </section>
+        `
+      })
     })
     .catch(error => {
       errorDOM.textContent = error.response.data.message

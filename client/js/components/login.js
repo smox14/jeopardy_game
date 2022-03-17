@@ -30,20 +30,37 @@ function login(event) {
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
-  var errorDOM = document.querySelector('.log-in .error')
-  errorDOM.textContent = ''
+  // var errorDOM = document.querySelector('.log-in .error')
+  // errorDOM.textContent = ''
   axios
     .post('/api/sessions', data)
     .then(res => res.data)
     .then(user => {
       state.userName = user.userName
       state.userId = user.userId
+    })
+    .then( () => {
+      document.querySelector("#header-nav").style.pointerEvents = 'none';
+      document.querySelector('#page').innerHTML = ` 
+      <section class='login-success'>
+    <img src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif">
+      </section>
+      `
+      sleep(2000).then(() => {
 
-      // document.querySelector('.show.user-name').innerHTML = `Welcome! ${state.userName.toUpperCase()}`
-      renderHeaderNav()
-      renderAccountInfo()
-
-
+       document.querySelector('#page').innerHTML = ` 
+        <section class='user login success'>
+          <span class="material-icons">check_circle</span>
+          <p> Login Success!</p>
+        </section>
+        `
+        document.querySelector("#header-nav").style.pointerEvents = 'auto';
+        sleep(1500).then(() => {
+          renderHeaderNav()
+          renderQuizBoard()
+        })
+        // renderAccountInfo()
+      })  
     })
     .catch(error => {
       let errorDOM = document.querySelector('.log-in .error')
@@ -55,8 +72,20 @@ function login(event) {
 function logOut() {
   axios
     .delete('/api/sessions')
-    .then()
-  initialSetting()
-  renderHeaderNav()
-  renderQuizBoard()
+    .then(() => {
+      initialSetting()
+      sleep(500).then(() => {
+         document.querySelector('#page').innerHTML = ` 
+        <section class='user logout success'>
+          <p> You have successfully logged out.</p>
+          <br>
+        </section>
+        `
+        sleep(2000).then(() => {
+          renderHeaderNav()
+          renderQuizBoard()  
+        })
+      })
+      
+    }) 
 }

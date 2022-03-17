@@ -33,11 +33,23 @@ function renderQuizQuestion() {
     
 
         <form onSubmit="grabQuestion(event)" class='question-form'>
+<!--
             <h2>Worth: </h2>
             <p id="category">$${state.question.value}</p>
             <h2>Category:</h2>
+-->
+          <section class="group">
+            
+            <p id="value">$${state.question.value}</p>
+            
+            <div>
+            <h2>Category: </h2>
+
             <p id="category">${state.question.category.title}</p>
-            <h2>Question:</h2>            
+            </div>
+            
+          </section>
+            <h2>Question</h2>            
             <p id="question">${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
             <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
@@ -55,9 +67,5 @@ function grabQuestion(event) {
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
   document.querySelector('.question-form').style.display = 'none'
-
-  // document.querySelector('.answer-btn').style.visibility = "hidden"
-  // document.querySelector('#question').style.visibility = "hidden"
-
   checkUserAnswer(data.user_input)
 }
