@@ -1,7 +1,7 @@
 function renderHeaderNav() {
   let userTag = ''
   if(state.userName){
-    userTag = `<li class="material-icons login-icon" onClick="render('login')">logout</li>`
+    userTag = `<li class="material-icons login-icon" onClick="render('logout')">logout</li>`
   } else {
     userTag = `
         <li class="material-icons sign-up-icon" onClick="render('signUp')">person_add</li>
@@ -31,5 +31,7 @@ function render(component) {
     renderAccountInfo()
   } else if (component === 'allResults') {
     getAllResultsToState()
+  } else if (component === 'logout') {
+    logOut()
   }
 }

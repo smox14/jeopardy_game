@@ -48,3 +48,12 @@ function login(event) {
       errorDOM.textContent = error.response.data.message
     })
 }
+
+function logOut() {
+  axios
+    .delete('/api/sessions')
+    .then()
+    initialSetting()
+    renderHeaderNav()
+    renderQuizBoard()
+}

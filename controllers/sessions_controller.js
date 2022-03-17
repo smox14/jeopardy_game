@@ -27,4 +27,10 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+  req.session.userId = null 
+  console.log("logout")
+  return res.status(200)
+})
+
 module.exports = router
