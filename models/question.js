@@ -19,6 +19,12 @@ const Question = {
     return db
       .query(sql, [user_id])
       .then(dbRes => dbRes.rows)
+  },
+  percentageForAll: () => {
+    const sql = "SELECT COUNT(*) AS total_questions_answered, AVG(CAST(user_correct AS INTEGER)) * 100 AS percentage_correct FROM user_questions"
+    return db
+      .query(sql)
+      .then(dbRes => dbRes.rows)
   }
 }
 

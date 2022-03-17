@@ -3,21 +3,22 @@ const express = require('express')
 
 // access app Object
 const app = express()
-const port = 3000 
+const port = 3000
 
 //  start the web server
-app.listen(port, 
+app.listen(port,
   () => console.log(`listening on port ${port}`)
 )
 
 // middlewares
-const logger = require('./middlewares/logger') 
+const logger = require('./middlewares/logger')
 const sessions = require('./middlewares/sessions')
 
 // controllers
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
 const questionsController = require('./controllers/questions_controller')
+const percentagesontroller = require('./controllers/percentages_controller')
 
 
 // (middleware)  log request 
@@ -38,18 +39,4 @@ app.use(express.json())
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
 app.use('/api/questions', questionsController)
-
-// retrieving random question data from API and assigning the required variables
-
-// const axios = require('axios')
-// axios
-//   .get('https://jservice.io/api/random')
-//   .then(res => {
-//     let apiData = res.data[0]
-//     let questionId = apiData.id 
-//     let question = apiData.question
-//     let answer = apiData.answer
-//     let value = apiData.value
-//     let categoryId = apiData.category
-//   })
-
+app.use('/api/percentages', percentagesontroller)

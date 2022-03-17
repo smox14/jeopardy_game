@@ -1,6 +1,9 @@
-function renderQuizBoard(){
-  document.querySelector('#page').innerHTML = 
+function renderQuizBoard() {
+  const username = checkUsername(state.userName)
+
+  document.querySelector('#page').innerHTML =
     `
+    <h2 class="welcome">Welcome ${username}! Select a difficulty below</h2>
     <section class="question-board">
     <div onClick=getQuestion(100)>$100</div>
     <div onClick=getQuestion(200)>$200</div>
@@ -17,12 +20,21 @@ function renderQuizBoard(){
 }
 renderQuizBoard()
 
+function checkUsername(username) {
+  if (username) {
+    return username
+  } else {
+    return 'Guest'
+  }
+}
 
 function renderQuizQuestion() {
   document.querySelector('#page .create-question').innerHTML = `
     
 
         <form onSubmit="grabQuestion(event)" class='question-form'>
+            <h2>Worth: </h2>
+            <p id="category">$${state.question.value}</p>
             <h2>Category:</h2>
             <p id="category">${state.question.category.title}</p>
             <h2>Question:</h2>            
@@ -46,7 +58,6 @@ function grabQuestion(event) {
 
   // document.querySelector('.answer-btn').style.visibility = "hidden"
   // document.querySelector('#question').style.visibility = "hidden"
-  
-  checkUserAnswer(data.user_input)  
-}
 
+  checkUserAnswer(data.user_input)
+}

@@ -1,7 +1,7 @@
 function renderHeaderNav() {
   let userTag = ''
-  if(state.userName){
-    userTag = `<li title="Account Management" class="material-icons account" onClick="render('account')">account_circle</li>
+  if (state.userName) {
+    userTag = `<li title="Account Management" class="material-icons account_box" onClick="render('account')">account_box</li>
     <li title="Log Out" class="material-icons login-icon" onClick="render('logout')">logout</li>
     `
   } else {
@@ -13,8 +13,8 @@ function renderHeaderNav() {
   document.querySelector('#header-nav').innerHTML = `
       <ul>
         <li title="Quiz Page" class="material-icons quiz-question" onClick="render('quizQuestion')">quiz</li>
-        <li title="All Result Records" class="material-icons all-results" onClick="render('allResults')">query_stats</li>
-        
+        <li title="All Result Records" class="material-icons travel_explore" onClick="render('allResults')">travel_explore</li>
+        <li title="World Percentage Score" class="material-icons query_stats" onClick="render('percentage')">query_stats</li>
         ${userTag}
       </ul>
     `
@@ -35,5 +35,8 @@ function render(component) {
     getAllResultsToState()
   } else if (component === 'logout') {
     logOut()
+  } else if (component === 'percentage') {
+    renderPercentage()
   }
+
 }

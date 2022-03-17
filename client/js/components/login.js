@@ -1,4 +1,3 @@
-
 function renderLogin() {
   document.querySelector('#page').innerHTML = `
     <section class="user log-in">
@@ -22,7 +21,7 @@ function renderLogin() {
   `
 }
 
-function clearError(className){
+function clearError(className) {
   var errorDOM = document.querySelector(`.${className} .error`)
   errorDOM.textContent = ''
 }
@@ -43,8 +42,8 @@ function login(event) {
       // document.querySelector('.show.user-name').innerHTML = `Welcome! ${state.userName.toUpperCase()}`
       renderHeaderNav()
       renderAccountInfo()
-      
-       
+
+
     })
     .catch(error => {
       let errorDOM = document.querySelector('.log-in .error')
@@ -57,7 +56,7 @@ function logOut() {
   axios
     .delete('/api/sessions')
     .then()
-    initialSetting()
-    renderHeaderNav()
-    renderQuizBoard()
+  initialSetting()
+  renderHeaderNav()
+  renderQuizBoard()
 }

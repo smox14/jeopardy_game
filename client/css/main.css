@@ -10,6 +10,7 @@ body {
 h1 {
   font-size: xx-large;
   text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+  
 }
 h1,
 h2 {
@@ -25,7 +26,8 @@ h2 {
 .material-icons {
   color: #ffd166;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
-  font-size: xx-large;
+  /* font-size: xx-large; */
+  font-size: clamp(35px, 2vw, 55px);
 }
 .material-icons:hover {
   transform: scale(1.3);

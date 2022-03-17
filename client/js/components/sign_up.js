@@ -33,7 +33,12 @@ function signUp(event) {
   axios
     .post('/api/users', data)
     .then(res => res.data)
-    .then(userName => console.log(userName))
+    .then(userName => {
+      // console.log(userName)
+      renderLogin()
+      document.querySelector('.log-in .error').innerHTML = `You have successfully signed up, please log in below ${userName}`
+      document.querySelector('.log-in .error').style.color = 'yellow'
+    })
     .catch(error => {
       errorDOM.textContent = error.response.data.message
     })
