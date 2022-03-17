@@ -1,7 +1,7 @@
 .question-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 2rem 0;
+  margin: 1rem 0;
   width: 50vw;
   justify-content: center;
 }
@@ -37,4 +37,10 @@
 
 .hide {
   display: none;
+}
+
+.question-form h1,
+.question-form h2, 
+.question-form p {
+  margin: 0.3em;;
 }

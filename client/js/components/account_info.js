@@ -1,10 +1,9 @@
 function renderAccountInfo() {
-   
-      axios.get(`/api/questions/${state.userId}`)
-      .then(res => {
-          state.userResults = res.data
-          console.log(state.userResults)
-          const userResults = state.userResults.map(row => `
+
+  axios.get(`/api/questions/${state.userId}`)
+    .then(res => {
+      state.userResults = res.data
+      const userResults = state.userResults.map(row => `
           <section class='row' data-id="${row.id}"><br/>
             <span>Value: ${row.value}</span><br/>
             <span>Question: ${row.question}</span><br/>
@@ -14,21 +13,16 @@ function renderAccountInfo() {
             <span>User put: ${row.user_answer}</span><br/>
           </section>
         `).join('')
-          document.querySelector('#page').innerHTML = `
+      document.querySelector('#page').innerHTML = `
             <section class="account_info">
-                <div id="user_details">
-                <label>Username:</label>
-                <span>${state.userName}</span><br>
+              <h2>Welcome back ${state.userName}!</h2>
                 <label>UserID:</label>
-                <span>${state.userId}</span></div>
-                <h1>Answered questions from you</h1>
-
+                <span>${state.userId}</span><br/>
+                <label>Username:</label>
+                <span>${state.userName}</span>
+                <h2>Questions you've answered:</h2>
                 ${userResults}
             </section>
-            
-        ` 
-         })
-    
-
-      
+        `
+    })
 }
