@@ -20,9 +20,12 @@ function renderUserAnswerResult(userAnswer){
   let userAnswerDOM = document.querySelector('.user-answer')
   userAnswerDOM.style.visibility = "visible"
   if(userAnswer){
+    audioCorrect.play();
     state.userScore += parseInt(state.question.value)
     userAnswerDOM.innerHTML = `<h2> CORRECT! </h2>`
+    
   } else {
+    audioInCorrect.play();
     userAnswerDOM.innerHTML = `
       <h2>INCORRECT!</h2>
       <p> The Answer: ${state.question.answer}</p>

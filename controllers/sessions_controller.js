@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
           // log the user in
           req.session.userId = user.id
           // send back user's name to them
-          return res.status(200).json({ userName: user.name })
+          return res.status(200).json({ userName: user.name , userId: user.id})
         } 
       }   
         
