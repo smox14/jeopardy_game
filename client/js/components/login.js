@@ -1,3 +1,4 @@
+
 function renderLogin() {
   document.querySelector('#page').innerHTML = `
     <section class="user log-in">
@@ -35,10 +36,12 @@ function login(event) {
   axios
     .post('/api/sessions', data)
     .then(res => res.data)
-    .then(userName => {
-      console.log(userName)
-      state.userName = userName
+    .then(user => {
+      state.userName = user.userName
+      state.userId = user.userId
       renderHeaderNav()
+      renderAccountInfo()
+      
     })
     .catch(error => {
       let errorDOM = document.querySelector('.log-in .error')

@@ -4,6 +4,11 @@ const state = {
     userScore:0,
     question: null
 }
+var audioIntro = new Audio('../../sounds/jeopardy-intro.mp3');
+var audioCorrect = new Audio('../../sounds/rightanswer.mp3');
+var audioInCorrect = new Audio('../../sounds/wronganswer.mp3');
+
+initialSetting()
 
 function getQuestion(value=null) {
     
@@ -29,4 +34,14 @@ function getQuestion(value=null) {
 function initialSetting() {
     state.userScore = 0
     state.question = null
+}
+
+
+function playMusic() {  
+  if (audioIntro.paused) {
+      console.log('yes')
+         audioIntro.play();
+     } else {
+         audioIntro.pause();
+     }
 }
