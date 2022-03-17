@@ -22,7 +22,7 @@ function renderQuizQuestion() {
             <p>For: $${state.question.value}</p>
             <p>Category: ${state.question.category.title}</p>
             <p>Unique ID: ${state.question.id}</p>
-            <p>Question: ${state.question.question}</p>
+            <p id="question">Question: ${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
             <p>Answer: ${state.question.answer}</p>
             <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
