@@ -49,8 +49,8 @@ label {
   font-size: 1rem;
   font-style: bold;
   color: white;
-  background-color: #449DD1;
-  border: 2px solid #F5BB00;
+  background-color: #449dd1;
+  border: 2px solid #f5bb00;
   border-radius: 30px;
 }
 .user button {
@@ -73,10 +73,10 @@ button {
 }
 
 a:link {
-  color: ;
+  color: wheat;
 }
 a:visited {
-  color: #449DD1;
+  color: #449dd1;
 }
 
 a:hover {
