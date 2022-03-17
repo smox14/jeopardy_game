@@ -13,10 +13,11 @@ router.post('/', (req, res) => {
     .then(res => console.log(res))
 })
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
+  
   Question
   .selectAll()
-  .then()
+  .then(data => res.json(data))
 })
 
 module.exports = router
