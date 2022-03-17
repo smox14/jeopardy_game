@@ -34,6 +34,8 @@ function getQuestion(value=null) {
 function initialSetting() {
     state.userScore = 0
     state.question = null
+    state.userId = null
+    state.userName = null
 }
 
 
