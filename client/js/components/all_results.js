@@ -23,7 +23,8 @@ function createAllResultsDOM() {
         <span>Question: ${row.question}</span><br/>
         <span>Category: ${row.category}</span><br/>
         <span>Correct answer: ${row.answer}</span><br/>
-        <span>User answered correctly? ${row.user_answer}</span><br/>
+        <span>User answered correctly? ${row.user_correct}</span><br/>
+        <span>User put: ${row.user_answer}</span><br/>
       </section>
     `).join('')
   }

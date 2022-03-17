@@ -5,11 +5,11 @@ const router = express.Router()
 router.post('/', (req, res) => {
   // const
   const category = req.body.category.title
-  const {answer, question, user_answer, id, category_id, value, user_id} = req.body
+  const {answer, user_answer, question, user_correct, id, category_id, value, user_id} = req.body
 // upda
   console.log(req.body)
   Question
-  .createAnswer(answer, question, category, user_answer, id, category_id, value, user_id)
+  .createAnswer(answer, user_answer, question, category, user_correct, id, category_id, value, user_id)
     .then(res => console.log(res))
 })
 

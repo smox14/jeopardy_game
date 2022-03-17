@@ -4,9 +4,10 @@ CREATE DATABASE jeopardy_db;
 CREATE TABLE user_questions(
   id SERIAL PRIMARY KEY,
   answer TEXT,
+  user_answer TEXT,
   question TEXT,
   category TEXT,
-  user_answer BOOLEAN,
+  user_correct BOOLEAN,
   question_id INTEGER,
   category_id INTEGER,
   value INTEGER,
