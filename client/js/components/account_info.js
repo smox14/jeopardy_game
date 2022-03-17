@@ -16,10 +16,11 @@ function renderAccountInfo() {
         `).join('')
           document.querySelector('#page').innerHTML = `
             <section class="account_info">
-                <label>UserID:</label>
-                <span>${state.userId}</span>
+                <div id="user_details">
                 <label>Username:</label>
-                <span>${state.userName}</span>
+                <span>${state.userName}</span><br>
+                <label>UserID:</label>
+                <span>${state.userId}</span></div>
                 <h1>Answered questions from you</h1>
 
                 ${userResults}

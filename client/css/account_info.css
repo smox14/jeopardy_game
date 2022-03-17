@@ -1,0 +1,8 @@
+#user_details {
+  font-family: "Roboto Serif", serif;
+  /* background-color:#064789;
+  border: 1px solid #f5bb00; */
+  color: #ffd166;
+  padding: 1em;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
