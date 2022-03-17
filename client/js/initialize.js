@@ -17,7 +17,7 @@ function getQuestion(value=null) {
         .then(res => res.data)
         .then(question => {
             state.question = question[Math.floor(Math.random() * question.length)]
-            console.log(state.question)
+            // console.log(state.question)
             renderQuizQuestion()
         })
     } else {
@@ -25,7 +25,7 @@ function getQuestion(value=null) {
         .then(res => res.data)
         .then(question => {
             state.question = question[0]
-            console.log(state.question)
+            // console.log(state.question)
             renderQuizQuestion()
         })
     }
@@ -46,4 +46,9 @@ function playMusic() {
      } else {
          audioIntro.pause();
      }
+}
+
+// sleep time expects milliseconds
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
 }

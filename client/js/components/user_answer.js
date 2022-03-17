@@ -20,7 +20,8 @@ function saveToDatabase(){
 function renderUserAnswerResult(userAnswer){
   let userAnswerDOM = document.querySelector('.user-answer')
   // userAnswerDOM.style.visibility = "hidden"
-  userAnswerDOM.style.border = "none"
+  // userAnswerDOM.style.border = "none"
+  userAnswerDOM.classList.toggle('hide')
   if(userAnswer){
     audioCorrect.play();
     state.userScore += parseInt(state.question.value)
@@ -46,4 +47,8 @@ function renderUserAnswerResult(userAnswer){
     userAnswerDOM.style.margin = "0 auto"
   }
   
+  sleep(4000).then(() => {
+        userAnswerDOM.classList.toggle('hide')
+        getQuestion(state.question.value)
+  })
 }

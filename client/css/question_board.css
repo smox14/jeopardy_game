@@ -18,9 +18,14 @@
 
 .user-answer {
   visibility: visible;
-  position: absolute;
+  /* position: absolute; */
   /* border: solid black; */
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
+  left: 30vw;
   width: 50vw;
+}
+
+.hide {
+  display: none;
 }

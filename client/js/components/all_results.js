@@ -2,7 +2,7 @@ function getAllResultsToState() {
     axios.get('/api/questions')
         .then(res => {
             state.allResults = res.data
-            console.log(state.allResults)
+            // console.log(state.allResults)
             renderAllResults()
         })
 }
