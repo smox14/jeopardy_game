@@ -38,6 +38,7 @@ function login(event) {
     .then(user => {
       state.userName = user.userName
       state.userId = user.userId
+      state.email = user.email
     })
     .then( () => {
       document.querySelector("#header-nav").style.pointerEvents = 'none';
