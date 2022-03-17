@@ -87,3 +87,18 @@ p {
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
   /* border-style: groove; */
 }
+
+.answer-btn {
+  font-size: larger;
+  padding: 7px 15px;
+  background-color: #449DD1;
+  border: 2px solid #F5BB00;
+  border-radius: 30px;
+}
+
+.user-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
