@@ -29,6 +29,7 @@ h2 {
 }
 .material-icons:hover {
   transform: scale(1.3);
+  color: #F5BB00;
 }
 
 p {
@@ -91,4 +92,21 @@ p {
 
 .jeopady {
   cursor: pointer;
+}
+
+.answer-btn {
+  background-color: #449DD1;
+  border: 2px solid #F5BB00;
+  color: antiquewhite;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: larger;
+  padding: 7px 15px;
+}
+
+.user-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
 }

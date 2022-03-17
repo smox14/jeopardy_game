@@ -1,0 +1,13 @@
+.row {
+  background: #064789;
+  border: 2px solid #F5BB00;
+  border-radius: 0.5rem;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+  color: #FFD166;;
+  font-family: "Roboto Serif", serif;
+  padding: 1rem;
+  margin: 1em;
+}
+.row span {
+  margin-bottom: 2em;
+}
