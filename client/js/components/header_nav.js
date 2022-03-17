@@ -30,6 +30,6 @@ function render(component) {
   } else if (component === 'account') {
     renderAccountInfo()
   } else if (component === 'allResults') {
-    renderAllResults()
+    getAllResultsToState()
   }
 }
