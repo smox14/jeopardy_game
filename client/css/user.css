@@ -49,8 +49,12 @@ label {
   font-size: 1rem;
   font-style: bold;
   color: white;
-  background-color: black;
+  background-color: #449DD1;
+  border: 2px solid #F5BB00;
   border-radius: 30px;
+}
+.user button {
+  cursor: pointer;
 }
 
 .user .error {
@@ -69,10 +73,10 @@ button {
 }
 
 a:link {
-  color: green;
+  color: ;
 }
 a:visited {
-  color: green;
+  color: #449DD1;
 }
 
 a:hover {

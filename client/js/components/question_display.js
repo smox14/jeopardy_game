@@ -21,13 +21,9 @@ function renderQuizQuestion() {
   document.querySelector('#page .create-question').innerHTML = `
     
         <form onSubmit="grabQuestion(event)">
-            <h2>Question:</h2>
-            <p>For: $${state.question.value}</p>
-            <p>Category: ${state.question.category.title}</p>
-            <p>Unique ID: ${state.question.id}</p>
-            <p id="question">Question: ${state.question.question}</p>
+            <h2>Question:</h2>            
+            <p id="question">${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
-            <p>Answer: ${state.question.answer}</p> 
             <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
             <input name="user_input" class="user_input"></input><br>
             <button class="answer-btn">Submit</button>

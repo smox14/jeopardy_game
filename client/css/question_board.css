@@ -19,7 +19,7 @@
 .user-answer {
   visibility: visible;
   position: absolute;
-  border: solid black;
+  /* border: solid black; */
   padding: 1.5rem;
   text-align: center;
   width: 50vw;

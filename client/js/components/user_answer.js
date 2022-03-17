@@ -19,12 +19,19 @@ function saveToDatabase(){
 
 function renderUserAnswerResult(userAnswer){
   let userAnswerDOM = document.querySelector('.user-answer')
-  userAnswerDOM.style.visibility = "visible"
+  // userAnswerDOM.style.visibility = "hidden"
+  userAnswerDOM.style.border = "none"
   if(userAnswer){
     audioCorrect.play();
     state.userScore += parseInt(state.question.value)
     userAnswerDOM.innerHTML = `<h2> CORRECT! </h2>`
     
+    userAnswerDOM.style.border = "2px solid #F5BB00"
+    userAnswerDOM.style.backgroundColor = "#064789"
+    userAnswerDOM.style.borderRadius = "10px"
+    userAnswerDOM.style.margin = "0 auto"
+
+    // userAnswerDOM.style.visibility = "visible"
   } else {
     audioInCorrect.play();
     userAnswerDOM.innerHTML = `
@@ -33,6 +40,10 @@ function renderUserAnswerResult(userAnswer){
       <p> Your Answer: ${state.question.user_answer}</p>
       
     `
+    userAnswerDOM.style.border = "2px solid #F5BB00"
+    userAnswerDOM.style.backgroundColor = "#064789"
+    userAnswerDOM.style.borderRadius = "10px"
+    userAnswerDOM.style.margin = "0 auto"
   }
   
 }
