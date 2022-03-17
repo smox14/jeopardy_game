@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://i.imgur.com/T4V3xu5.jpg');
+  background-image: url("https://i.imgur.com/T4V3xu5.jpg");
 }
 
 .page-container {
@@ -11,10 +11,11 @@ h1 {
   font-size: xx-large;
   text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
 }
-h1,h2 {
-  font-family: 'Roboto Serif', serif;
+h1,
+h2 {
+  font-family: "Roboto Serif", serif;
   font-weight: 700;
-  color: #F5BB00;
+  color: #f5bb00;
 }
 h2 {
   font-size: large;
@@ -22,7 +23,7 @@ h2 {
 }
 
 .material-icons {
-  color:  #FFD166;
+  color: #ffd166;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
   font-size: xx-large;
 }
@@ -31,8 +32,8 @@ h2 {
 }
 
 p {
-  font-family: 'Roboto Serif', serif;
-  color: #FFD166;
+  font-family: "Roboto Serif", serif;
+  color: #ffd166;
 }
 
 #header-nav ul {
@@ -51,11 +52,11 @@ p {
 }
 
 .question-board div {
-  color: #F5BB00;
+  color: #f5bb00;
   font-size: large;
   font-weight: 700;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); 
-  border: 1px solid #F5BB00;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  border: 1px solid #f5bb00;
   border-radius: 4px;
   padding: 5px 10px;
   margin-bottom: 4px;
@@ -73,32 +74,21 @@ p {
   align-items: center;
 }
 .create-question p {
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
   font-weight: 400;
 }
 
 #question {
   font-size: larger;
-  text-shadow: 3px 6px 6px rgba(0, 0, 0, 0.5); 
+  text-shadow: 3px 6px 6px rgba(0, 0, 0, 0.5);
   padding: 10px;
   background-color: #064789;
-  border: 2px dotted #F5BB00;
+  border: 2px dotted #f5bb00;
   border-radius: 5px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
   /* border-style: groove; */
 }
 
-.answer-btn {
-  font-size: larger;
-  padding: 7px 15px;
-  background-color: #449DD1;
-  border: 2px solid #F5BB00;
-  border-radius: 30px;
-}
-
-.user-input {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
+.jeopady {
+  cursor: pointer;
 }
