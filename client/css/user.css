@@ -32,6 +32,7 @@ label {
 .user label {
   font-size: 1.2rem;
   margin: 0;
+  color: antiquewhite;
 }
 
 .user input {
@@ -58,7 +59,7 @@ label {
 }
 
 .user .error {
-  color: red;
+  color: #FF5964;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -80,5 +81,5 @@ a:visited {
 }
 
 a:hover {
-  color: red;
+  color: #FF5964;
 }

@@ -21,7 +21,10 @@ renderQuizBoard()
 function renderQuizQuestion() {
   document.querySelector('#page .create-question').innerHTML = `
     
+
         <form onSubmit="grabQuestion(event)" class='question-form'>
+            <h2>Category:</h2>
+            <p id="category">${state.question.category.title}</p>
             <h2>Question:</h2>            
             <p id="question">${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
