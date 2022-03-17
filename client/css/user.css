@@ -10,7 +10,7 @@
   background-color: #064789;
   border-radius: 20px;
   padding: 0 30px;
-  margin: 100px auto;
+  margin: 5vh auto;
   max-width: 400px;
   /* height: 470px; */
   padding-top: 0.1rem;
@@ -18,7 +18,7 @@
 }
 
 label {
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
 }
 
 .user fieldset {
@@ -65,7 +65,7 @@ label {
 }
 
 button {
-  font-family: 'Roboto Serif', serif;
+  font-family: "Roboto Serif", serif;
 }
 
 a:link {
