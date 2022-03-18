@@ -1,5 +1,8 @@
 body {
-  background-image: url("https://i.imgur.com/T4V3xu5.jpg");
+  /* background-image: url("https://i.imgur.com/T4V3xu5.jpg"); */
+  background: url("https://i.imgur.com/T4V3xu5.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
 }
 
 .page-container {
@@ -10,7 +13,6 @@ body {
 h1 {
   font-size: xx-large;
   text-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
-  
 }
 h1,
 h2 {

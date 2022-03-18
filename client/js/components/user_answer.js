@@ -14,7 +14,7 @@ function saveToDatabase() {
   obj.user_id = state.userId
   axios
     .post('/api/questions', obj)
-    .then(res => res.data)
+    .then()
 }
 
 function renderUserAnswerResult(userAnswer) {
@@ -35,6 +35,7 @@ function renderUserAnswerResult(userAnswer) {
     // userAnswerDOM.style.visibility = "visible"
   } else {
     audioInCorrect.play();
+    state.userScore -= parseInt(state.question.value)
     userAnswerDOM.innerHTML = `
       <h2>INCORRECT!</h2>
       <p> The correct answer: ${state.question.answer}</p>
