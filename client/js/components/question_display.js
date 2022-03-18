@@ -53,7 +53,7 @@ function renderQuizQuestion() {
             <p id="question">${state.question.question}</p>
             <input type="hidden" name="question" value="${state.question.question.replaceAll('\"', "\'")}">
             <input type="hidden" name="question_answer" class="question_answer" value="${state.question.answer}">
-            <input name="user_input" class="user_input"></input><br>
+            <input name="user_input" class="user_input" placeholder="type your answer here..."></input><br>
             <button class="answer-btn">Submit</button>
             
       </form>

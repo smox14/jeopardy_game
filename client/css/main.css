@@ -95,6 +95,11 @@ p {
 .jeopady {
   cursor: pointer;
 }
+.user_input {
+  border: 2px solid #f5bb00;
+  border-radius: 4px;
+  height: 30px;
+}
 
 .answer-btn {
   background-color: #449dd1;

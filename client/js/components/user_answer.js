@@ -37,8 +37,8 @@ function renderUserAnswerResult(userAnswer) {
     audioInCorrect.play();
     userAnswerDOM.innerHTML = `
       <h2>INCORRECT!</h2>
-      <p> The Correct Answer: ${state.question.answer}</p>
-      <p> Your Answer: ${state.question.user_answer}</p>
+      <p> The correct answer: ${state.question.answer}</p>
+      <p> Your answer: ${state.question.user_answer}</p>
       
     `
     userAnswerDOM.style.border = "2px solid #F5BB00"
