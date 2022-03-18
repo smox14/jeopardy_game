@@ -1,4 +1,4 @@
-Try the app! URL
+Try the app! [URL](https://mysterious-beach-25679.herokuapp.com/)
 
 # Jeopardy
 This is a Single Page Application (SPA) where everything is put into a single page. We recreated a digital version of the popular TV show jeopardy. This app is a way to play the quiz online no matter where you are.
