@@ -40,7 +40,7 @@ function initialSetting() {
         if(user.user_info) {
             state.userId = user.user_info.userId
             state.userName = user.user_info.userName
-            state.email = user.email
+            state.email = user.user_info.email
             state.userScore = 0
         } else {
             state.userId = null
