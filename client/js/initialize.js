@@ -1,7 +1,7 @@
 const state = {
-  userId: null,
-  userName: null,
-  userScore: 0,
+//   userId: null,
+//   userName: null,
+//   userScore: 0,
   question: null
 }
 var audioIntro = new Audio('../../sounds/jeopardy-intro.mp3');
@@ -32,9 +32,22 @@ function getQuestion(value = null) {
 function initialSetting() {
   state.userScore = 0
   state.question = null
-  state.userId = null
-  state.userName = null
-  state.email = null
+  
+  axios.get('/api/sessions')
+    .then(res => res.data )
+    .then( user => {
+        if(user.user_info) {
+            state.userId = user.user_info.userId
+            state.userName = user.user_info.userName
+            state.email = user.email
+        } else {
+            state.userId = null
+            state.userName = null
+            state.email = null
+        }
+        renderHeaderNav()    
+        renderQuizBoard()
+    })
 }
 
 
