@@ -30,7 +30,6 @@ router.post('/', (req, res) => {
 
 router.get('/', (req,res) => {
   const userId = req.session.userId 
-  console.log(userId)
   User 
     .findByID(userId)
     .then( user => {

@@ -53,7 +53,6 @@ function initialSetting() {
 
 function playMusic() {
   if (audioIntro.paused) {
-    console.log('yes')
     audioIntro.play();
   } else {
     audioIntro.pause();

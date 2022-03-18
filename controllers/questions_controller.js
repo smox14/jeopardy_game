@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
   const {answer, user_answer, question, user_correct, id, category_id, value, user_id} = req.body
   Question
   .createAnswer(answer, user_answer, question, category, user_correct, id, category_id, value, user_id)
-    .then(res => console.log(res))
+    .then()
 })
 
 router.get('/', (req, res) => {
