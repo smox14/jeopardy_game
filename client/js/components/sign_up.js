@@ -35,11 +35,6 @@ function signUp(event) {
     .then(res => res.data)
     .then(userName => {
 
-      // console.log(userName)
-      // renderLogin()
-      // document.querySelector('.log-in .error').innerHTML = `You have successfully signed up, please log in below ${userName}`
-      // document.querySelector('.log-in .error').style.color = 'yellow'
-
       document.querySelector("#header-nav").style.pointerEvents = 'none';
       document.querySelector('#page').innerHTML = ` 
         <section class='login-success'>
