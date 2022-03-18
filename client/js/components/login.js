@@ -74,7 +74,6 @@ function logOut() {
   axios
     .delete('/api/sessions')
     .then(() => {
-      initialSetting()
       sleep(500).then(() => {
          document.querySelector('#page').innerHTML = ` 
         <section class='user logout success'>
@@ -83,8 +82,7 @@ function logOut() {
         </section>
         `
         sleep(2000).then(() => {
-          renderHeaderNav()
-          renderQuizBoard()  
+          initialSetting()
         })
       })
       

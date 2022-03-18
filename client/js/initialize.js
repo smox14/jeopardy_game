@@ -36,7 +36,6 @@ function initialSetting() {
   axios.get('/api/sessions')
     .then(res => res.data )
     .then( user => {
-        console.log(user)
         if(user.user_info) {
             state.userId = user.user_info.userId
             state.userName = user.user_info.userName
