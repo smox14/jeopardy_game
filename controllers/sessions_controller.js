@@ -16,6 +16,7 @@ router.post('/', (req, res) => {
           
           // log the user in
           req.session.userId = user.id
+          
           // send back user's name to them
           return res.status(200).json({ userName: user.name , userId: user.id, email: user.email})
         } 
@@ -24,6 +25,25 @@ router.post('/', (req, res) => {
         // send back a message to inform the user that they provided the wrong email or password
         return res.status(422).json({ message: 'Invalid email or password' })
       
+    })
+})
+
+router.get('/', (req,res) => {
+  const userId = req.session.userId 
+  console.log(userId)
+  User 
+    .findByID(userId)
+    .then( user => {
+      if (user) {
+        return res.status(200).json( {
+          user_info: {
+             userName: user.name , 
+             userId: user.id, 
+             email: user.email} 
+        })
+      } else {
+        return res.json({ user_info: null })
+      }
     })
 })
 

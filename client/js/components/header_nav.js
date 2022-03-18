@@ -20,7 +20,7 @@ function renderHeaderNav() {
     `
 }
 
-renderHeaderNav()
+
 
 function render(component) {
   if (component === 'quizQuestion') {

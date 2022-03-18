@@ -18,7 +18,7 @@ function renderQuizBoard() {
     <section class="create-question"></section>
   `
 }
-renderQuizBoard()
+
 
 function checkUsername(username) {
   if (username) {
