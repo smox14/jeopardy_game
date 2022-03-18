@@ -57,10 +57,9 @@ function login(event) {
         `
         document.querySelector("#header-nav").style.pointerEvents = 'auto';
         sleep(1500).then(() => {
-          renderHeaderNav()
-          renderQuizBoard()
+          initialSetting()
         })
-        // renderAccountInfo()
+        
       })  
     })
     .catch(error => {
